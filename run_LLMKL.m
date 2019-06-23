@@ -15,9 +15,9 @@ X=X';
 X = NormalizeFea(X,0);
 
 lambda1=1e-2;
-lambda2=1e3;
+lambda2=1e2;
 lambda3=3;
-lambda4=1e2; 
+lambda4=1e-1; 
 
 
 
