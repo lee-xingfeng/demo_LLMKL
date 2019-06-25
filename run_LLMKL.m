@@ -14,10 +14,10 @@ load(kernel_file)
 X=X';
 X = NormalizeFea(X,0);
 
-lambda1=1e-2;
-lambda2=1e2;
+lambda1=1e-3;
+lambda2=1e3;
 lambda3=3;
-lambda4=1e-1; 
+lambda4=1;
 
 
 
@@ -27,7 +27,7 @@ param.lambda2=lambda2;
 param.lambda3=lambda3;
 param.lambda4=lambda4;
 param.eta = 20;
-param.mu = 1.2;
+param.mu = 0.1;
 fprintf('%.5f %.4f %.4f %.4f',lambda1,lambda2,lambda3,lambda4);
 [result,Z,E]= LLMKL(K,X,y,param);
 result
