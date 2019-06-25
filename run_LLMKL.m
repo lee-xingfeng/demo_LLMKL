@@ -21,13 +21,13 @@ lambda4=1e-1;
 
 
 
-mu = 1.2; 
+
 param.lambda1=lambda1;
 param.lambda2=lambda2;
 param.lambda3=lambda3;
 param.lambda4=lambda4;
 param.eta = 20;
-param.mu = mu;
+param.mu = 1.2;
 fprintf('%.5f %.4f %.4f %.4f',lambda1,lambda2,lambda3,lambda4);
 [result,Z,E]= LLMKL(K,X,y,param);
 result
