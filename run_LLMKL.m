@@ -29,6 +29,6 @@ param.lambda4=lambda4;
 param.eta = 20;
 param.mu = 0.1;
 fprintf('%.5f %.4f %.4f %.4f',lambda1,lambda2,lambda3,lambda4);
-[result,Z,E]= LLMKL(K,X,y,param);
+[result,Z]= LLMKL(K,X,y,param);
 result
 imagesc(Z);colormap(jet);axis off;
