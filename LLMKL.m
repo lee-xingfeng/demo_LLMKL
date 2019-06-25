@@ -1,4 +1,4 @@
-function [result,Z,E]= LLMKL(H,X,y,param)
+function [result,Z]= LLMKL(H,X,y,param)
 nCluster=length(unique(y));
 
 nn=length(y);
