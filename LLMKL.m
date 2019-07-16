@@ -32,6 +32,7 @@ DD = lambda3*distX;
 BTB=K;
 obj=[];
 for iter = 1:maxIter
+    Zold=Z;
     %Update Z
      Z= (BTB+eps*eye(nn))\(BTB-DD);
      Z = Z - diag(diag(Z));
@@ -46,7 +47,7 @@ for iter = 1:maxIter
     for j = 1:m
         HI = HI + g(j)*H(:,:,j);
     end
-    Kold=K;
+
     K=((mu+lambda2)*eye(nn))\((mu*(BTB+E)-Y1)+lambda2*HI);
     K(find(K<0))=0;
     
@@ -73,10 +74,10 @@ for iter = 1:maxIter
     leq = K - BTB - E;
     Y1 = Y1 + mu*leq;
     mu = min(max_rho,mu*eta);
-    %obj(iter)=norm(K-Kold,'fro');  
+    %obj(iter)=norm(Z-Zold,'fro');  
     %obj(iter)=0.5*trace((eye(nn)-2*Z'+Z*Z')*BTB)+lambda1*rank(B)+0.5*lambda2*norm(K-HI,'fro')+lambda3*trace(DD'*Z);
 
-    if((iter>5)&(norm(K-Kold,'fro') < norm(Kold,'fro') * epsilon))
+    if((iter>5)&(norm(Z-Zold,'fro') < norm(Zold,'fro') * epsilon))
         break
     end
 end
