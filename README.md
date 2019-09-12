@@ -1,1 +1,1 @@
-Knowledge-Based Systems (KBS).
+Accepted by Knowledge-Based Systems (KBS).
